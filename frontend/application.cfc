@@ -10,7 +10,7 @@
 	<cfset THIS.ClientManagement = "No">
 	<cfset this.mappings['/model'] = ExpandPath("./model") />
 	<cfset this.mappings['/views'] = ExpandPath("./views") />
-	<cfset application.DSN="danieldecary">
+	<cfset application.DSN="decary">
 
 
 	<cfsetting
