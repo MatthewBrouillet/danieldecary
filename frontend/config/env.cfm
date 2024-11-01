@@ -51,7 +51,7 @@
 	//////////////
 	REQUEST.config = {
 		dsn: 'decary',
-		env: 'prod'
+		env: 'dev'
 	}
 	REQUEST.root = "https://www.danieldecary.ca";
 	REQUEST.rootPub = "https://www.danieldecary.ca";
