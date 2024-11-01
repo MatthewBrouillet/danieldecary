@@ -22,7 +22,7 @@
             <div class="card box-shadow-2 mt-2 mb-2">
                 <div class="row g-0">
                     <div class="col-lg-5">
-                        <img src="#request.root#/img/daniel1.jpg" style="width:100%;" class="img-fluid rounded-start" alt="...">
+                        <img src="#request.root#/img/training.jpg" style="width:100%;" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-lg-7">
                         <div class="card-body">
@@ -75,13 +75,17 @@
                     <div class="col-lg-3 col-sm-12 pb-3">
                         <div class="card border-radius-0 bg-color-light border-0 box-shadow-3">
                             <div class="card">
-                                <CFIF URL.lang EQ "fr">
-                                    <a href="#viewbag.helper.getUrlFr('fr', 'services', '', 'counselling')#">
-                                <CFELSE>
-                                    <a href="#viewbag.helper.getUrl('en', 'services', '', 'counselling')#">
-                                </CFIF>
-                                    <img class="card-img-top" src="#request.root#/img/counselling.jpg" alt="Counselling">
-                                </a>
+                                <span class="thumb-info thumb-info-hide-wrapper-bg">
+								    <span class="thumb-info-wrapper">
+                                        <CFIF URL.lang EQ "fr">
+                                            <a href="#viewbag.helper.getUrlFr('fr', 'services', '', 'counselling')#">
+                                        <CFELSE>
+                                            <a href="#viewbag.helper.getUrl('en', 'services', '', 'counselling')#">
+                                        </CFIF>
+                                            <img class="card-img-top" src="#request.root#/img/counselling.jpg" alt="Counselling">
+                                        </a>
+                                    </span>
+                                </span>
                                 <div class="card-body">
                                     <CFIF URL.lang EQ "fr">
                                         <h4 class="card-title mb-1 text-5 font-weight-bold text-color-primary"><a href="#viewbag.helper.getUrlFr('fr', 'services', '', 'counselling')#">Counselling / Web Thérapie</a></h4>
@@ -99,13 +103,17 @@
                     <div class="col-lg-3 col-sm-12 pb-3">
                         <div class="card border-radius-0 bg-color-light border-0 box-shadow-3">
                             <div class="card">
-                                <CFIF URL.lang EQ "fr">
-                                    <a href="#viewbag.helper.getUrlFr('fr', 'services', '', 'conferences')#">
-                                <CFELSE>
-                                    <a href="#viewbag.helper.getUrl('en', 'services', '', 'conferences')#">
-                                </CFIF>
-                                    <img class="card-img-top" src="#request.root#/img/conferences.jpg" alt="Conferences">
-                                </a>
+                                <span class="thumb-info thumb-info-hide-wrapper-bg">
+								    <span class="thumb-info-wrapper">
+                                        <CFIF URL.lang EQ "fr">
+                                            <a href="#viewbag.helper.getUrlFr('fr', 'services', '', 'conferences')#">
+                                        <CFELSE>
+                                            <a href="#viewbag.helper.getUrl('en', 'services', '', 'conferences')#">
+                                        </CFIF>
+                                            <img class="card-img-top" src="#request.root#/img/conferences2.jpg" alt="Conferences">
+                                        </a>
+                                    </span>
+                                </span>
                                 <div class="card-body">
                                     <CFIF URL.lang EQ "fr">
                                         <h4 class="card-title mb-1 text-5 font-weight-bold text-color-primary"><a href="#viewbag.helper.getUrlFr('fr', 'services', '', 'conferences')#">Conférences / Retraites</a></h4>
@@ -123,13 +131,17 @@
                     <div class="col-lg-3 col-sm-12 pb-3">
                         <div class="card border-radius-0 bg-color-light border-0 box-shadow-3">
                             <div class="card">
-                                <CFIF URL.lang EQ "fr">
-                                    <a href="#viewbag.helper.getUrlFr('fr', 'services', '', 'training')#">
-                                <CFELSE>
-                                    <a href="#viewbag.helper.getUrl('en', 'services', '', 'training')#">
-                                </CFIF>
-                                    <img class="card-img-top" src="#request.root#/img/daniel_predi1.jpg" alt="Training">
-                                </a>
+                                <span class="thumb-info thumb-info-hide-wrapper-bg">
+								    <span class="thumb-info-wrapper">
+                                        <CFIF URL.lang EQ "fr">
+                                            <a href="#viewbag.helper.getUrlFr('fr', 'services', '', 'training')#">
+                                        <CFELSE>
+                                            <a href="#viewbag.helper.getUrl('en', 'services', '', 'training')#">
+                                        </CFIF>
+                                            <img class="card-img-top" src="#request.root#/img/counselling2.jpg" alt="Training">
+                                        </a>
+                                    </span>
+                                </span>
                                 <div class="card-body">
                                     <CFIF URL.lang EQ "fr">
                                         <h4 class="card-title mb-1 text-5 font-weight-bold text-color-primary"><a href="#viewbag.helper.getUrlFr('fr', 'services', '', 'training')#">Formation en relation d'aide</a></h4>
@@ -147,13 +159,17 @@
                     <div class="col-lg-3 col-sm-12 pb-3">
                         <div class="card border-radius-0 bg-color-light border-0 box-shadow-3">
                             <div class="card">
-                                <CFIF URL.lang EQ "fr">
-                                    <a href="#viewbag.helper.getUrlFr('fr', 'services', '', 'birkman')#">
-                                <CFELSE>
-                                    <a href="#viewbag.helper.getUrl('en', 'services', '', 'birkman')#">
-                                </CFIF>
-                                    <img class="card-img-top" src="#request.root#/img/birkman.png" alt="Birkman">
-                                </a>
+                                <span class="thumb-info thumb-info-hide-wrapper-bg">
+								    <span class="thumb-info-wrapper">
+                                        <CFIF URL.lang EQ "fr">
+                                            <a href="#viewbag.helper.getUrlFr('fr', 'services', '', 'birkman')#">
+                                        <CFELSE>
+                                            <a href="#viewbag.helper.getUrl('en', 'services', '', 'birkman')#">
+                                        </CFIF>
+                                            <img class="card-img-top" src="#request.root#/img/birkman.png" alt="Birkman">
+                                        </a>
+                                    </span>
+                                </span>
                                 <div class="card-body">
                                     <CFIF URL.lang EQ "fr">
                                         <h4 class="card-title mb-1 text-5 font-weight-bold text-color-primary"><a href="#viewbag.helper.getUrlFr('fr', 'resources', '', 'birkman')#">Méthode Birkman</a></h4>

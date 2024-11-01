@@ -28,7 +28,7 @@
                 <CFIF URL.lang EQ "fr">
                     <div class="row">
                         <div class="col-lg-5 col-md-5 col-sm-12">
-                            <img class="box-shadow-2 img-fluid" src="#request.root#/img/about1.jpg" alt="About Daniel">
+                            <img class="box-shadow-2 img-fluid" src="#request.root#/img/about2.jpg" alt="About Daniel">
                         </div>
                         <div class="col-lg-7 col-md-7 col-sm-12">
                             <p>Originaire de Montréal, je me suis converti au christianisme en 1983 à l'âge de 22 ans. La jeune femme qui m'a conduit au Seigneur est devenue mon épouse en 1984. À ce moment, je travaillais à l'hôpital psychiatrique Douglas où j'étais éducateur spécialisé. Je travaillais principalement avec des délinquants juvéniles. Suite à mon mariage, j'ai ressenti l'appel du Seigneur pour le ministère. J'ai donc débuté mes études bibliques pour graduer en 1988. J'ai accepté mon premier pastorat la même année.</p>

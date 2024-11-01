@@ -39,14 +39,14 @@
 					<i class="fas fa-bars"></i>
 				</button>
 			</div>
-			<div class="header-nav-features order-1 order-lg-2">
+			<!--- <div class="header-nav-features order-1 order-lg-2">
 			<div class="header-nav-feature header-nav-features-social-icons d-inline-flex">
 				<ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean ms-0">
 					<li class="social-icons-facebook"><a href="#viewbag.helper.getUrlFr('fr', 'danieldecary', '', 'shop')#"><i class="fas fa-cart-plus text-4 text-color-light"></i></a></li>
 					<!--- <li class="social-icons-facebook"><a href="https://www.facebook.com/CIDSUO" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
 					<li class="social-icons-twitter"><a href="https://www.linkedin.com/company/clinique-interdisciplinaire-en-droit-social-social-rights-interdisciplinary-clinic/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li> --->
 				</ul>
-			</div>
+			</div> --->
 		</div>
 	<CFELSE>
 		<div class="header-row">
@@ -84,14 +84,14 @@
 					<i class="fas fa-bars"></i>
 				</button>
 			</div>
-			<div class="header-nav-features order-1 order-lg-2">
+			<!--- <div class="header-nav-features order-1 order-lg-2">
 			<div class="header-nav-feature header-nav-features-social-icons d-inline-flex">
 				<ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean ms-0">
 					<li class="social-icons-facebook"><a href="#viewbag.helper.getUrl('en', 'danieldecary', '', 'shop')#"><i class="fas fa-cart-plus text-4 text-color-light"></i></a></li>
 					<!--- <li class="social-icons-facebook"><a href="https://www.facebook.com/CIDSUO" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
 					<li class="social-icons-twitter"><a href="https://www.linkedin.com/company/clinique-interdisciplinaire-en-droit-social-social-rights-interdisciplinary-clinic/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li> --->
 				</ul>
-			</div>
+			</div> --->
 		</div>
 	</CFIF>
 </cfoutput>

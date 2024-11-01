@@ -40,47 +40,40 @@ component {
 		if (module eq "danieldecary") {
 			url &= this.env eq "dev" ? "&module=#module#" : "/danieldecary"
 		}
-		else if (module eq "about_us") {
-			url &= this.env eq "dev" ? "&module=#module#" : "/a-propos"
+		else if (module eq "services") {
+			url &= this.env eq "dev" ? "&module=#module#" : "/services"
 		}
-		else if (module eq "interns_and_volunteers") {
-			url &= this.env eq "dev" ? "&module=#module#" : "/stagiaires-et-benevoles"
-		}
-		else if (module eq "news") {
-			url &= this.env eq "dev" ? "&module=#module#" : "/actualites"
-		}
-		else if (module eq "partners") {
-			url &= this.env eq "dev" ? "&module=#module#" : "/partenaires"
-		}
-		else if (module eq "research") {
-			url &= this.env eq "dev" ? "&module=#module#" : "/recherche"
-		}
-		else if (module eq "resources") {
-			url &= this.env eq "dev" ? "&module=#module#" : "/ressources"
-		}
-
 		else {
 			url &= this.env eq "dev" ? "&module=#module#" : "/#module#"
 		}
 		if (section neq "") {
 			url &= this.env eq "dev" ? "&section=#section#" : "/#section#"
 		}
-		/* module cidso */
+		/* module danieldecary */
 		if (action eq "home") {
 			url &= this.env eq "dev" ? "&action=#action#" : "/accueil"
 		}
 		else if (action eq "contact") {
 			url &= this.env eq "dev" ? "&action=#action#" : "/contact"
 		}
-		/* module about_us */
-		else if (action eq "our_services") {
-			url &= this.env eq "dev" ? "&action=#action#" : "/nos-services"
+		else if (action eq "about") {
+			url &= this.env eq "dev" ? "&action=#action#" : "/a-propos"
 		}
-		else if (action eq "project_description") {
-			url &= this.env eq "dev" ? "&action=#action#" : "/description-du-projet"
+		else if (action eq "shop") {
+			url &= this.env eq "dev" ? "&action=#action#" : "/boutique"
 		}
-		else if (action eq "team_members") {
-			url &= this.env eq "dev" ? "&action=#action#" : "/membres-de-l-equipe"
+		/* module services */
+		else if (action eq "birkman") {
+			url &= this.env eq "dev" ? "&action=#action#" : "/birkman"
+		}
+		else if (action eq "conferences") {
+			url &= this.env eq "dev" ? "&action=#action#" : "/conferences"
+		}
+		else if (action eq "counselling") {
+			url &= this.env eq "dev" ? "&action=#action#" : "/counselling"
+		}
+		else if (action eq "training") {
+			url &= this.env eq "dev" ? "&action=#action#" : "/formation"
 		}
 		else {
 			url &= this.env eq "dev" ? "&action=#action#" : "/#action#"
