@@ -3,7 +3,7 @@
             themeforest-f3s8UiVf-porto-responsive-html5-template --->
 	<cfprocessingdirective pageencoding="utf-8" />
 
-	<cfset THIS.Name = "danieldecary">
+	<cfset THIS.Name = "decary">
 	<cfset THIS.ApplicationTimeout = CreateTimeSpan(0, 2, 00, 0)>
 	<cfset THIS.SessionManagement = "Yes">
 	<cfset THIS.SessionTimeout = CreateTimeSpan(0, 2, 00, 0)>
