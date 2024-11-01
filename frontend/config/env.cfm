@@ -5,7 +5,7 @@
 	// Local env for Matthew //
 	//////////////////////////
 	
-	REQUEST.config = {
+	/* REQUEST.config = {
 		dsn: 'decary',
 		env: 'dev'
 	}
@@ -13,7 +13,7 @@
 	REQUEST.root = "http://localhost:8500/danieldecary";
 	REQUEST.rootPub = "http://localhost:8500/danieldecary";
 	REQUEST.backend = "http://localhost:8500/danieldecary/backend/?lang=fr&module=danieldecary&action=intranet_login";
-	REQUEST.path = "C:\Users\matth\Documents\GitHub\danieldecary";
+	REQUEST.path = "C:\Users\matth\Documents\GitHub\danieldecary"; */
 	
 
 
