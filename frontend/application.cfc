@@ -59,6 +59,32 @@
 			<cfset SESSION.lang = "en">
 			<cfset URL.lang = "en">
 		</cfif>
+
+		<!--- DATABASE VARIABLES --->
+		<cfset APPLICATION.DSN="decary">
+		<cfset APPLICATION.BD_usager="">
+		<cfset APPLICATION.BD_mdp="">
+
+	
+		<!--- URLS AND PATHS --->
+		<!--- <cfif CGI.HTTP_HOST EQ '127.0.0.1'>
+			<cfset APPLICATION.Root		=	"http://127.0.0.1/decary">
+			<cfset APPLICATION.Path		=	"C:\dev\decary">
+			<cfset APPLICATION.TITLE	=	"Daniel Decary">
+			<!--- <cfset APPLICATION.cfcClients 	=	"decary.cfc.clients"> --->
+			<!--- <cfset APPLICATION.cfcCorrespondants 	=	"decary.cfc.correspondants"> --->
+		<!--- <cfelse> --->
+		<cfelseif CGI.HTTP_HOST EQ 'danieldecary.com' OR CGI.HTTP_HOST EQ 'www.danieldecary.com' OR CGI.HTTP_HOST EQ 'danieldecary.ca' OR CGI.HTTP_HOST EQ 'www.danieldecary.ca'>
+			<cfset APPLICATION.Root		=	"https://beta.danieldecary.ca">
+			<cfset APPLICATION.Path		=	"C:\sites\decary">
+			<cfset APPLICATION.TITLE	=	"Daniel Decary">
+			<!--- <cfset APPLICATION.cfcClients 	=	"cfc.clients"> --->
+			<!--- <cfset APPLICATION.cfcCorrespondants 	=	"cfc.correspondants"> --->
+		</cfif> --->
+		
+		<!--- <cfset APPLICATION.PathCFC			=	"#APPLICATION.Path#\cfc">
+		<cfset APPLICATION.EmailDeveloppeur	=	"francois@creationstouche.com">
+		<cfset APPLICATION.EmailEnvoi		=	"ddecary@gmail.com"> --->
 		
 
 		<!--- TO REINITIALIZE PAGE --->
