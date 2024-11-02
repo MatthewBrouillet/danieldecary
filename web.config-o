@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+		<httpProtocol>
+			<customHeaders>
+				<!-- Set a Access-Control-Allow-Origin header -->
+				<add name="Access-Control-Allow-Origin" value="*"/>
+			</customHeaders>
+		</httpProtocol>
+        <defaultDocument>
+            <files>
+                <clear />
+                <add value="index.cfm" />
+                <add value="index.htm" />
+            </files>
+        </defaultDocument>
+		<rewrite>
+			<rules>
+				######################
+				# FRONTEND RULES     #
+				###################### 
+				
+				<rule name="home">
+					<match url="^$" />
+					<action type="Rewrite" url="index.cfm/?langue=fr" />
+				</rule>
+				<rule name="home en">
+					<match url="^en$" />
+					<action type="Rewrite" url="index.cfm/?langue=en" />
+				</rule>
+				<rule name="home fr">
+					<match url="^fr$" />
+					<action type="Rewrite" url="index.cfm/?langue=fr" />
+				</rule>
+
+				<rule name="daniel en">
+					<match url="^en/daniel$" />
+					<action type="Rewrite" url="daniel.cfm/?langue=en" />
+				</rule>
+				<rule name="daniel fr">
+					<match url="^fr/daniel$" />
+					<action type="Rewrite" url="daniel.cfm/?langue=fr" />
+				</rule>
+
+				<rule name="calendrier en">
+					<match url="^en/agenda$" />
+					<action type="Rewrite" url="calendrier.cfm/?langue=en" />
+				</rule>
+				<rule name="calendrier fr">
+					<match url="^fr/calendrier$" />
+					<action type="Rewrite" url="calendrier.cfm/?langue=fr" />
+				</rule>
+
+				
+
+				
+			</rules>
+		</rewrite>
+    </system.webServer>
+</configuration>
