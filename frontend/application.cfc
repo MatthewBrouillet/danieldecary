@@ -82,10 +82,14 @@
 			<!--- <cfset APPLICATION.cfcCorrespondants 	=	"cfc.correspondants"> --->
 		</cfif> --->
 		
-		<!--- <cfset APPLICATION.PathCFC			=	"#APPLICATION.Path#\cfc">
-		<cfset APPLICATION.EmailDeveloppeur	=	"francois@creationstouche.com">
-		<cfset APPLICATION.EmailEnvoi		=	"ddecary@gmail.com"> --->
-		
+		<!--- EMAIL TESTING MATT --->
+		<cfset APPLICATION.emailInfo	=	"ddecary@gmail.com">
+		<cfset APPLICATION.emailDeveloper	=	"matthew@creationstouche.com">
+		<!--- <cfset APPLICATION.emailInfo	=		"info@ccdcanada.com">
+		<cfset APPLICATION.emailDeveloper	=	"francois@creationstouche.com"> --->
+
+		<cfset APPLICATION.SiteKey	=	"6Lc3em8UAAAAABqDfp2md8YGowaZBYVW0sE3M0iX">
+		<cfset APPLICATION.SecretKey=	"6Lc3em8UAAAAAGmFSnoO7v2hG8bVNN8aWvgx0fhU">
 
 		<!--- TO REINITIALIZE PAGE --->
 		<cfif StructKeyExists(URL, 'restart')> 

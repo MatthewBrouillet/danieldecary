@@ -1,9 +1,10 @@
-<CFSET message="">
-	
-<cfparam name="form.nom" type="string" default="" />
-<cfparam name="form.courriel" type="string" default="" />
-<cfparam name="form.subject" type="string" default="" />
-<cfparam name="form.message" type="string" default="" />
+<script src="<cfoutput>#request.root#</cfoutput>/js/views/view.contact.js"></script>
+
+<cfparam name="form.name_contact" type="string" default="" />
+<cfparam name="Form.email_contact" type="string" default="" />
+<cfparam name="form.subject_contact" type="string" default="" />
+<cfparam name="form.message_contact" type="string" default="" />
+<cfparam name="confirmation" type="boolean" default="no" />
 
 <cfscript>
 /**
@@ -47,68 +48,32 @@ if ( StructKeyExists(form, 'g-recaptcha-response') ) {
     <CFSET lang = "en">
 </CFIF>
 
-<CFIF StructKeyExists(Form,'soumettre_formulaire')>
-    <cfif IsDefined('resp') and resp.success>
+<!--- FOR CAPTCHA v3 --->
+<script src="https://www.google.com/recaptcha/api.js?render=<cfoutput>#APPLICATION.SiteKey#</cfoutput>"></script>
 
-        <!--- <cfinvoke component="#viewbag.cfc.correspondants#" method = "correspondanceAjout" returnvariable ="acceptation">
-            <cfinvokeargument name="adresseIP" value="#CGI.REMOTE_ADDR#">
-            <cfinvokeargument name="courriel" value="#Form.courriel#">
-            <cfinvokeargument name="langue" value="#URL.langue#">
-            <cfinvokeargument name="nom" value="#Form.nom#">
-            <cfinvokeargument name="message" value="#Form.message#">
-            <!--- <cfinvokeargument name="service" value="#Form.service#"> --->
-            <!--- <cfinvokeargument name="telephone" value="#Form.telephone#"> --->
-        </cfinvoke>
-        
-        <cfinvoke component="#viewbag.cfc.correspondants#" method = "service" returnvariable ="service">	
-            <cfinvokeargument name="langue" value="#URL.langue#">
-            <cfinvokeargument name="serviceID" value="#Form.service#">
-        </cfinvoke> --->
-        
-        <!--- ------------------------------------ --->
-        <!---            ENVOI COURRIEL            --->
-        <!--- ------------------------------------ --->
-        <!--- <CFMAIL TO="ddecary@gmail.com" FROM="#Form.courriel#" SUBJECT="#service#"   TYPE="HTML">
-            <CFINCLUDE template="_email_contact.cfm">
-        </CFMAIL> --->
-        
-        <CFMAIL 
-            to="#APPLICATION.EmailEnvoi#" 
-            from="#APPLICATION.emailAttributes.from#"  
-            port="#APPLICATION.emailAttributes.port#"
-            server="#APPLICATION.emailAttributes.server#" 
-            subject="#service#"  
-            type="HTML"
-            useTLS="#APPLICATION.emailAttributes.useTLS#"
-            username="#APPLICATION.emailAttributes.username#"
-            password="#APPLICATION.emailAttributes.password#"> 
-            <CFINCLUDE template="_email_contact.cfm">
-        </CFMAIL>
-        
-        <!--- ------------------------------------ --->
-        <!---        FIN ENVOI COURRIEL            --->
-        <!--- ------------------------------------ --->
-        
-        <CFIF URL.lang EQ "fr">
-            <CFSET message = "Nous avons bien reçu votre message. Nous y ferons suite dans les plus brefs délais. Merci de votre intérêt.">
-        <CFELSE>
-            <CFSET message = "We have received your message. We will follow up as soon as possible. Thanks for your interest..">
-        </CFIF>
+<CFIF StructKeyExists(Form,'send_message')>
 
-        <CFSET Form.nom = "">
-        <CFSET Form.courriel = "">
-        <CFSET Form.subject = "">
-        <CFSET Form.message = "">
+    <cfhttp url="https://www.google.com/recaptcha/api/siteverify?secret=#APPLICATION.SecretKey#&response=#FORM['g-recaptcha-response']#" result="Response" />
+    <cfset Return = deserializeJSON(Response.FileContent) />
 
-    <CFELSE>
-        <CFSET messageType = "warning">
-        <CFIF URL.langue EQ "fr">
-            <CFSET message = "Veuillez cocher la case indiquant que vous n'êtes pas un robot.">
-        <CFELSE>
-            <CFSET message = "Please check the box indicating that you are not a robot.">
-        </CFIF>
-    </CFIF>
-</CFIF>
+    <cfif Return.success IS 'true' <!--- AND Return.score GT 0.5 --->> <!--- check if true and if score is greater than 0.5. Run code below if all good. --->
+
+        <CFSET confirmation = "yes">
+		
+        <cfinclude template="/views/pages/danieldecary/include/sendMail.cfm">
+
+        <CFSET form.name_contact = "">
+        <CFSET Form.email_contact = "">
+        <CFSET form.subject_contact = "">
+        <CFSET form.message_contact = "">
+
+    <cfelse>  <!--- if not a human, do this. I usually remove the else part completely, but if you need to do something with the robot, do it here.  --->
+        <cfoutput>#Return.success#</cfoutput>
+        Most likely a robot.
+
+    </cfif>
+
+</cfif>
     
    
    
@@ -170,28 +135,28 @@ if ( StructKeyExists(form, 'g-recaptcha-response') ) {
                             <div class="row">
                                 <div class="form-group col-lg-6">
                                     <label class="form-label mb-1 text-2"><CFIF URL.lang EQ "en">Name<CFELSE>Nom</CFIF></label>
-                                    <input type="text" value="<!--- <cfoutput>#Form.nom#</cfoutput> --->" data-msg-required="Please enter your last name." maxlength="100" class="form-control text-3 h-auto py-2" data-name="nom" id="nom" name="nom" required pattern="[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._-\s]+" oninvalid="setCustomValidity('Veuillez inscrire votre nom')" onchange="try{setCustomValidity('')}catch(e){}"/>
+                                    <input type="text" value="#form.name_contact#" data-msg-required="Please enter your last name." maxlength="100" class="form-control text-3 h-auto py-2" data-name="nom" id="nom" name="nom" required pattern="[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._-\s]+" oninvalid="setCustomValidity('Veuillez inscrire votre nom')" onchange="try{setCustomValidity('')}catch(e){}"/>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label class="form-label mb-1 text-2"><CFIF URL.lang EQ "en">Email Address<CFELSE>Addresse courriel</CFIF></label>
-                                    <input type="email" value="<!--- <cfoutput>#Form.courriel#</cfoutput> --->" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control text-3 h-auto py-2" id="courriel" name="courriel" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" oninvalid="setCustomValidity('Veuillez entrer une adresse courriel valide.')" onchange="try{setCustomValidity('')}catch(e){}" />
+                                    <input type="email" value="#Form.email_contact#" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control text-3 h-auto py-2" id="courriel" name="courriel" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" oninvalid="setCustomValidity('Veuillez entrer une adresse courriel valide.')" onchange="try{setCustomValidity('')}catch(e){}" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col">
                                     <label class="form-label mb-1 text-2"><CFIF URL.lang EQ "en">Subject<CFELSE>Sujet</CFIF></label>
-                                    <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control text-3 h-auto py-2" name="subject" id="subject" required>
+                                    <input type="text" value="#form.subject_contact#" data-msg-required="Please enter the subject." maxlength="100" class="form-control text-3 h-auto py-2" name="subject" id="subject" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col">
                                     <label class="form-label mb-1 text-2"><CFIF URL.lang EQ "en">Message<CFELSE>Message</CFIF></label>
-                                    <textarea maxlength="5000" data-msg-required="Please enter your message." rows="8" class="form-control text-3 h-auto py-2" name="message" id="message" required></textarea>
+                                    <textarea maxlength="5000" data-msg-required="Please enter your message." rows="8" class="form-control text-3 h-auto py-2" name="message" id="message" required>#Form.message_contact#</textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col">
-                                    <input type="submit" value="Send Message" name="soumettre_formulaire" class="btn btn-primary btn-modern" data-loading-text="Loading...">
+                                    <input type="submit" value="Send Message" id="send_message" name="send_message" class="btn btn-primary btn-modern" data-loading-text="Loading...">
                                 </div>
                             </div>
                         </form>
@@ -233,5 +198,14 @@ if ( StructKeyExists(form, 'g-recaptcha-response') ) {
             <!--- END OF CONTENT ---> 
 
         </div>
+
+        <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('#APPLICATION.SiteKey#', {action: 'homepage'})
+                .then(function(token) {
+                    document.getElementById('g-recaptcha-response').value=token;
+                });
+            });
+        </script>
     </cfoutput>
     
