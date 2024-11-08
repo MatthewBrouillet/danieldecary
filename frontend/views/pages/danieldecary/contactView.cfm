@@ -149,7 +149,7 @@ if ( StructKeyExists(form, 'g-recaptcha-response') ) {
                         <h2 class="font-weight-bold text-8 mt-2 mb-0"><CFIF URL.lang EQ "en">Contact Us<CFELSE>Contactez-nous</CFIF></h2>
                         <p class="mb-4"><CFIF URL.lang EQ "en">Feel free to ask for details, don't save any questions!<CFELSE></CFIF></p>
 
-                        <form class="contact-form" action="php/contact-form.php" method="POST">
+                        <form class="contact-form" action="#viewbag.helper.getUrl('en', 'danieldecary', '', 'contact')#" method="POST">
                             <div class="contact-form-success alert alert-success d-none mt-4">
                                 <CFIF URL.lang EQ "en">
                                     <strong>Success!</strong> Your message has been sent to us.
