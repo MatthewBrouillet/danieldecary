@@ -82,9 +82,9 @@
 			<!--- <cfset APPLICATION.cfcCorrespondants 	=	"cfc.correspondants"> --->
 		</cfif> --->
 		
-		<cfset APPLICATION.PathCFC			=	"#APPLICATION.Path#\cfc">
-		<cfset APPLICATION.EmailDeveloppeur	=	"matthew@creationstouche.com">
-		<cfset APPLICATION.EmailEnvoi		=	"ddecary@gmail.com">
+		<!--- <cfset APPLICATION.PathCFC			=	"#APPLICATION.Path#\cfc">
+		<cfset APPLICATION.EmailDeveloppeur	=	"francois@creationstouche.com">
+		<cfset APPLICATION.EmailEnvoi		=	"ddecary@gmail.com"> --->
 		
 
 		<!--- TO REINITIALIZE PAGE --->
