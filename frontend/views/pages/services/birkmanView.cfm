@@ -210,7 +210,7 @@
                         <h2>Paiement en ligne</h2>
                         <form name="consultation" action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="return validateDollar(document.consultation.amount)" class="nobottommargin">
                         <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="ddecary@gmail.com">
+                        <input type="hidden" name="business" value="ddecary@hotmail.com">
                         <input type="hidden" name="item_name" value="Birkman">
                         <input type="hidden" name="item_number" value="1">
                         <input type="text" name="amount" value="" placeholder="Entrer le montant" class="sm-form-control" style="width:200px;display:inline;"><br><br>
