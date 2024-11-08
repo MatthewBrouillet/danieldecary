@@ -20,7 +20,7 @@
     <cfhttp url="https://www.google.com/recaptcha/api/siteverify?secret=#APPLICATION.SecretKey#&response=#FORM['g-recaptcha-response']#" result="Response" />
     <cfset Return = deserializeJSON(Response.FileContent) />
     
-    <!--- <cfoutput>#Return.success#</cfoutput> --->
+    <cfoutput>#Return.success#</cfoutput>
     <!--- <cfif Return.success IS 'true' AND Return.score GT 0.5> ---> <!--- check if true and if score is greater than 0.5. Run code below if all good. --->
 
         <CFSET confirmation = "yes">
