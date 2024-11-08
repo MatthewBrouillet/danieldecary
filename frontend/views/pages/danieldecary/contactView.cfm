@@ -170,28 +170,28 @@ if ( StructKeyExists(form, 'g-recaptcha-response') ) {
                             <div class="row">
                                 <div class="form-group col-lg-6">
                                     <label class="form-label mb-1 text-2"><CFIF URL.lang EQ "en">Name<CFELSE>Nom</CFIF></label>
-                                    <input type="text" value="<cfoutput>#Form.nom#</cfoutput>" data-msg-required="Please enter your last name." maxlength="100" class="form-control text-3 h-auto py-2" data-name="nom" id="nom" name="nom" required pattern="[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._-\s]+" oninvalid="setCustomValidity('Veuillez inscrire votre nom')" onchange="try{setCustomValidity('')}catch(e){}"/>
+                                    <input type="text" value="<!--- <cfoutput>#Form.nom#</cfoutput> --->" data-msg-required="Please enter your last name." maxlength="100" class="form-control text-3 h-auto py-2" data-name="nom" id="nom" name="nom" required pattern="[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._-\s]+" oninvalid="setCustomValidity('Veuillez inscrire votre nom')" onchange="try{setCustomValidity('')}catch(e){}"/>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label class="form-label mb-1 text-2"><CFIF URL.lang EQ "en">Email Address<CFELSE>Addresse courriel</CFIF></label>
-                                    <input type="email" value="<cfoutput>#Form.courriel#</cfoutput>" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control text-3 h-auto py-2" id="courriel" name="courriel" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" oninvalid="setCustomValidity('Veuillez entrer une adresse courriel valide.')" onchange="try{setCustomValidity('')}catch(e){}" />
+                                    <input type="email" value="<!--- <cfoutput>#Form.courriel#</cfoutput> --->" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control text-3 h-auto py-2" id="courriel" name="courriel" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" oninvalid="setCustomValidity('Veuillez entrer une adresse courriel valide.')" onchange="try{setCustomValidity('')}catch(e){}" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col">
                                     <label class="form-label mb-1 text-2"><CFIF URL.lang EQ "en">Subject<CFELSE>Sujet</CFIF></label>
-                                    <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control text-3 h-auto py-2" name="subject" required>
+                                    <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control text-3 h-auto py-2" name="subject" id="subject" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col">
                                     <label class="form-label mb-1 text-2"><CFIF URL.lang EQ "en">Message<CFELSE>Message</CFIF></label>
-                                    <textarea maxlength="5000" data-msg-required="Please enter your message." rows="8" class="form-control text-3 h-auto py-2" name="message" required></textarea>
+                                    <textarea maxlength="5000" data-msg-required="Please enter your message." rows="8" class="form-control text-3 h-auto py-2" name="message" id="message" required></textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col">
-                                    <input type="submit" value="Send Message" class="btn btn-primary btn-modern" data-loading-text="Loading...">
+                                    <input type="submit" value="Send Message" name="soumettre_formulaire" class="btn btn-primary btn-modern" data-loading-text="Loading...">
                                 </div>
                             </div>
                         </form>
