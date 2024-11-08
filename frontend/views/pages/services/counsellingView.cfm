@@ -110,7 +110,7 @@
                     <input type="hidden" name="currency_code" value="CAD">
                     <input type="hidden" name="lc" value="AU">
                     <input type="hidden" name="bn" value="PP-BuyNowBF">
-                    <input type="image" src="https://www.danieldecary.ca/images/shop/paypal_secure.png" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
+                    <input type="image" src="#request.root#/img/shop/paypal_secure.png" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
                     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                     </form>
                 </div>
