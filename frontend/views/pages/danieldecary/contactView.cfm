@@ -2,8 +2,7 @@
 	
 <cfparam name="form.nom" type="string" default="" />
 <cfparam name="form.courriel" type="string" default="" />
-<cfparam name="form.telephone" type="string" default="" />
-<cfparam name="form.service" type="string" default="" />
+<cfparam name="form.subject" type="string" default="" />
 <cfparam name="form.message" type="string" default="" />
 
 <cfscript>
@@ -51,7 +50,7 @@ if ( StructKeyExists(form, 'g-recaptcha-response') ) {
 <CFIF StructKeyExists(Form,'soumettre_formulaire')>
     <cfif IsDefined('resp') and resp.success>
 
-        <cfinvoke component="#viewbag.cfc.correspondants#" method = "correspondanceAjout" returnvariable ="acceptation">
+        <!--- <cfinvoke component="#viewbag.cfc.correspondants#" method = "correspondanceAjout" returnvariable ="acceptation">
             <cfinvokeargument name="adresseIP" value="#CGI.REMOTE_ADDR#">
             <cfinvokeargument name="courriel" value="#Form.courriel#">
             <cfinvokeargument name="langue" value="#URL.langue#">
@@ -64,7 +63,7 @@ if ( StructKeyExists(form, 'g-recaptcha-response') ) {
         <cfinvoke component="#viewbag.cfc.correspondants#" method = "service" returnvariable ="service">	
             <cfinvokeargument name="langue" value="#URL.langue#">
             <cfinvokeargument name="serviceID" value="#Form.service#">
-        </cfinvoke>
+        </cfinvoke> --->
         
         <!--- ------------------------------------ --->
         <!---            ENVOI COURRIEL            --->
@@ -98,8 +97,7 @@ if ( StructKeyExists(form, 'g-recaptcha-response') ) {
 
         <CFSET Form.nom = "">
         <CFSET Form.courriel = "">
-        <CFSET Form.telephone = "">
-        <CFSET Form.service = "">
+        <CFSET Form.subject = "">
         <CFSET Form.message = "">
 
     <CFELSE>
@@ -126,10 +124,10 @@ if ( StructKeyExists(form, 'g-recaptcha-response') ) {
                         <div class="col-md-4 order-1 order-md-2 align-self-center">
                             <ul class="breadcrumb d-block text-md-end">
                                 <CFIF URL.lang EQ "en">
-                                    <li><a href="#viewbag.helper.getUrl('en', 'PROJECT', '', 'home')#">Home</a></li>
+                                    <li><a href="#viewbag.helper.getUrl('en', 'danieldecary', '', 'home')#">Home</a></li>
                                     <li class="active">Contact Us</li>
                                 <CFELSE>
-                                    <li><a href="#viewbag.helper.getUrlFr('fr', 'PROJECT', '', 'home')#">Accueil</a></li>
+                                    <li><a href="#viewbag.helper.getUrlFr('fr', 'danieldecary', '', 'home')#">Accueil</a></li>
                                     <li class="active">Contactez-nous</li>
                                 </CFIF>
                             </ul>
