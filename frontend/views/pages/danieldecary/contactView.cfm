@@ -18,9 +18,11 @@
 <CFIF StructKeyExists(Form,'send_message')>
 
     <cfhttp url="https://www.google.com/recaptcha/api/siteverify?secret=#APPLICATION.SecretKey#&response=#FORM['g-recaptcha-response']#" result="Response" />
-    <cfset Return = deserializeJSON(Response.FileContent) />
+    <!--- <cfset Return = deserializeJSON(Response.FileContent) /> --->
+    <cfset Return = "true" />
 
-    <!--- <cfif Return.success IS 'true' AND Return.score GT 0.5> ---> <!--- check if true and if score is greater than 0.5. Run code below if all good. --->
+    <cfoutput>#Return.success#</cfoutput>
+    <cfif Return.success IS 'true' <!--- AND Return.score GT 0.5 --->> <!--- check if true and if score is greater than 0.5. Run code below if all good. --->
 
         <CFSET confirmation = "yes">
 		
@@ -31,11 +33,11 @@
         <CFSET form.subject_contact = "">
         <CFSET form.message_contact = "">
 
-    <!--- <cfelse> 
+    <cfelse>  <!--- if not a human, do this. I usually remove the else part completely, but if you need to do something with the robot, do it here.  --->
         <cfoutput>#Return.success#</cfoutput>
         Most likely a robot.
 
-    </cfif> --->
+    </cfif>
 
 </cfif>
     
