@@ -1,11 +1,11 @@
 	
-	<cfmail to="#APPLICATION.emailInfo#"  from="#form.email_contact#" cc="#APPLICATION.emailDeveloper#" subject="CGP - Message" type="HTML" >
+	<cfmail to="#APPLICATION.emailInfo#"  from="#form.email_contact#" cc="#APPLICATION.emailDeveloper#" subject="Daniel Decary - Message" type="HTML" >
 		<!doctype html>
 		<html>
 		  <head>
 			<meta name="viewport" content="width=device-width" />
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-			<title>Message from CGP website</title>
+			<title>Message from Daniel Decary website</title>
 			<style>
 			  /* -------------------------------------
 				  GLOBAL RESETS
@@ -292,12 +292,12 @@
 						  <table border="0" cellpadding="0" cellspacing="0">
 							<tr>
 								<td>
-									<img src="#request.Root#/img/logo_web_bil.png" alt="Logo - CGP" ><BR><BR>
+									<img src="#request.Root#/img/logos/logoDD_fr-dark.png" alt="Logo - Daniel Decary" ><BR><BR>
 								</td>
 							</tr>
 							<tr>
 								<td>
-								<p><strong>Here is a message sent from the CGP website</strong></p>
+								<p><strong>Here is a message sent from the Daniel Decary website</strong></p>
 								<CFOUTPUT>
 									<p>
                                     <strong>Name:</strong> #Form.name_contact#<br>
@@ -328,7 +328,7 @@
 						  <td class="content-block">
 							<span class="apple-link">
 								<CFOUTPUT>
-									CGP <BR><A HREF="#request.root#" STYLE="color:##224049;">#request.Root#</A>
+									Daniel Decary <BR><A HREF="#request.root#" STYLE="color:##224049;">#request.Root#</A>
 								</CFOUTPUT> 
 							</span>
 						  </td>

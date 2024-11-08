@@ -6,42 +6,6 @@
 <cfparam name="form.message_contact" type="string" default="" />
 <cfparam name="confirmation" type="boolean" default="no" />
 
-<cfscript>
-/**
-    * Sample CFML code to use reCAPTCHA V2.
-    *
-    * @copyright Copyright (c) 2014, Stephen J. Withington, Jr.
-    * @link      https://github.com/stevewithington/ReCAPTCHA
-    * 
-    * Permission is hereby granted, free of charge, to any person obtaining a copy
-    * of this software and associated documentation files (the "Software"), to deal
-    * in the Software without restriction, including without limitation the rights
-    * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    * copies of the Software, and to permit persons to whom the Software is
-    * furnished to do so, subject to the following conditions:
-    *
-    * The above copyright notice and this permission notice shall be included in
-    * all copies or substantial portions of the Software.
-    *
-    * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    * THE SOFTWARE.
-    */
-try {
-    creds = DeserializeJSON(FileRead(ExpandPath('creds.json')));
-} catch(any e) {
-    creds = {'siteKey'='6Lc3em8UAAAAABqDfp2md8YGowaZBYVW0sE3M0iX', 'secret'='6Lc3em8UAAAAAGmFSnoO7v2hG8bVNN8aWvgx0fhU'};
-}
-
-if ( StructKeyExists(form, 'g-recaptcha-response') ) {
-    reCaptcha = new cfc.recaptcha(creds.secret);
-    resp = reCaptcha.verifyResponse(response=form['g-recaptcha-response'], remoteip=cgi.remote_addr);
-}
-</cfscript>
 <CFIF URL.lang EQ "fr">
     <CFSET lang = "fr">
 <CFELSE>
@@ -156,6 +120,7 @@ if ( StructKeyExists(form, 'g-recaptcha-response') ) {
                             </div>
                             <div class="row">
                                 <div class="form-group col">
+                                    <input name="g-recaptcha-response" id="g-recaptcha-response" type="hidden" />
                                     <input type="submit" value="Send Message" id="send_message" name="send_message" class="btn btn-primary btn-modern" data-loading-text="Loading...">
                                 </div>
                             </div>
