@@ -88,8 +88,8 @@
 		<!--- <cfset APPLICATION.emailInfo	=		"info@ccdcanada.com">
 		<cfset APPLICATION.emailDeveloper	=	"francois@creationstouche.com"> --->
 
-		<cfset APPLICATION.SiteKey	=	"6Lc3em8UAAAAABqDfp2md8YGowaZBYVW0sE3M0iX">
-		<cfset APPLICATION.SecretKey=	"6Lc3em8UAAAAAGmFSnoO7v2hG8bVNN8aWvgx0fhU">
+		<cfset APPLICATION.SiteKey	=	"6LexyAMrAAAAAPwgMMzo0QrWuXIm1uzbCwKDzBKN">
+		<cfset APPLICATION.SecretKey=	"6LexyAMrAAAAAEcvcFImbqQUMnEwiFIzy27vrkh4">
 
 		<cfset APPLICATION.emailAttributes = {
 			from = "Contact web <daniel@danieldecary.ca>", 
