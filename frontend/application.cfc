@@ -91,6 +91,15 @@
 		<cfset APPLICATION.SiteKey	=	"6Lc3em8UAAAAABqDfp2md8YGowaZBYVW0sE3M0iX">
 		<cfset APPLICATION.SecretKey=	"6Lc3em8UAAAAAGmFSnoO7v2hG8bVNN8aWvgx0fhU">
 
+		<cfset APPLICATION.emailAttributes = {
+			from = "Contact web <daniel@danieldecary.ca>", 
+			server = "email-smtp.us-east-1.amazonaws.com",
+			useTLS = "yes", 
+			port = "25",
+			username = "AKIAZNEJE6CCBZM4ED7S", 
+			password = "BHbs5NRkyuKkgfcDYaQv9V4P9d+IZIUzXvR9KxDixavZ" 
+		}>
+
 		<!--- TO REINITIALIZE PAGE --->
 		<cfif StructKeyExists(URL, 'restart')> 
 			<cfset THIS.OnApplicationStart()>
