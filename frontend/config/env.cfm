@@ -55,5 +55,6 @@
 	}
 	REQUEST.root = "https://www.danieldecary.ca";
 	REQUEST.rootPub = "https://www.danieldecary.ca";
+	REQUEST.backend	=	"https://www.danieldecary.org/backend/en/danieldecary/intranet_login";
 	REQUEST.path = "D:\home\danieldecary.ca\wwwroot";
 </cfscript>
