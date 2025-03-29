@@ -18,7 +18,7 @@
 
         <CFSET confirmation = "yes">
 		
-        <cfinclude template="/views/pages/tele_rehab/include/sendMail.cfm">
+        <cfinclude template="/views/pages/danieldecary/include/sendMail.cfm">
 
         <CFSET form.name_contact = "">
         <CFSET Form.email_contact = "">
