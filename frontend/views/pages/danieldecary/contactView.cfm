@@ -7,11 +7,11 @@
 <cfparam name="confirmation" type="boolean" default="no" />
 
 <!--- FOR CAPTCHA v3 --->
-<script src="https://www.google.com/recaptcha/api.js?render=<cfoutput>#APPLICATION.SiteKey#</cfoutput>"></script>
+<!--- <script src="https://www.google.com/recaptcha/api.js?render=<cfoutput>#APPLICATION.SiteKey#</cfoutput>"></script> --->
 
 <CFIF StructKeyExists(Form,'send_message')>
 
-    <cfhttp url="https://www.google.com/recaptcha/api/siteverify?secret=#APPLICATION.SecretKey#&response=#FORM['g-recaptcha-response']#" result="Response" />
+    <!--- <cfhttp url="https://www.google.com/recaptcha/api/siteverify?secret=#APPLICATION.SecretKey#&response=#FORM['g-recaptcha-response']#" result="Response" /> --->
     <cfset Return = deserializeJSON(Response.FileContent) />
 
     <cfif Return.success IS 'true'<!---  AND Return.score GT 0.6 --->> <!--- check if true and if score is greater than 0.5. Run code below if all good. --->
