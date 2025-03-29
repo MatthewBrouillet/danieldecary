@@ -6,12 +6,6 @@
 <cfparam name="form.message_contact" type="string" default="" />
 <cfparam name="confirmation" type="boolean" default="no" />
 
-<CFIF URL.lang EQ "fr">
-    <CFSET lang = "fr">
-<CFELSE>
-    <CFSET lang = "en">
-</CFIF>
-
 <!--- FOR CAPTCHA v3 --->
 <script src="https://www.google.com/recaptcha/api.js?render=<cfoutput>#APPLICATION.SiteKey#</cfoutput>"></script>
 
@@ -19,28 +13,23 @@
 
     <cfhttp url="https://www.google.com/recaptcha/api/siteverify?secret=#APPLICATION.SecretKey#&response=#FORM['g-recaptcha-response']#" result="Response" />
     <cfset Return = deserializeJSON(Response.FileContent) />
-    
-    <!--- <cfoutput>#Return.success#</cfoutput>
-    <cfoutput>#form.name_contact#</cfoutput>
-    <cfoutput>#Form.email_contact#</cfoutput>
-    <cfoutput>#form.subject_contact#</cfoutput>
-    <cfoutput>#form.message_contact#</cfoutput> --->
-    <!--- <cfif Return.success IS 'true' AND Return.score GT 0.5> ---> <!--- check if true and if score is greater than 0.5. Run code below if all good. --->
+
+    <cfif Return.success IS 'true'<!---  AND Return.score GT 0.6 --->> <!--- check if true and if score is greater than 0.5. Run code below if all good. --->
 
         <CFSET confirmation = "yes">
 		
-        <cfinclude template="/views/pages/danieldecary/include/sendMail.cfm">
+        <cfinclude template="/views/pages/tele_rehab/include/sendMail.cfm">
 
         <CFSET form.name_contact = "">
         <CFSET Form.email_contact = "">
         <CFSET form.subject_contact = "">
         <CFSET form.message_contact = "">
 
-    <!--- <cfelse> 
+    <cfelse>  <!--- if not a human, do this. I usually remove the else part completely, but if you need to do something with the robot, do it here.  --->
         <cfoutput>#Return.success#</cfoutput>
         Most likely a robot.
 
-    </cfif> --->
+    </cfif>
 
 </cfif>
     
