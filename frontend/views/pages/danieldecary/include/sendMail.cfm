@@ -292,7 +292,7 @@
 						  <table border="0" cellpadding="0" cellspacing="0">
 							<tr>
 								<td>
-									<img src="#request.Root#/img/logos/logoDD_fr-dark.png" alt="Logo - Daniel Decary" ><BR><BR>
+									<img src="<cfoutput>#request.Root#</cfoutput>/img/logos/logoDD_fr-dark.png" alt="Daniel Decary" ><BR><BR>
 								</td>
 							</tr>
 							<tr>
