@@ -14,6 +14,9 @@
     <cfhttp url="https://www.google.com/recaptcha/api/siteverify?secret=#APPLICATION.SecretKey#&response=#FORM['g-recaptcha-response']#" result="Response" />
     <cfset Return = deserializeJSON(Response.FileContent) />
 
+    <!--- <cfdump var="#Return#"> --->
+
+
     <cfif Return.success IS 'true'> <!--- check if true and if score is greater than 0.5. Run code below if all good. --->
 
         <CFSET confirmation = "yes">
@@ -72,7 +75,11 @@
                         <h2 class="font-weight-bold text-8 mt-2 mb-0"><CFIF URL.lang EQ "en">Contact Us<CFELSE>Contactez-nous</CFIF></h2>
                         <p class="mb-4"><CFIF URL.lang EQ "en">Feel free to ask for details, don't save any questions!<CFELSE></CFIF></p>
 
-                        <form class="contact-form" action="#viewbag.helper.getUrl('en', 'danieldecary', '', 'contact')#" method="POST">
+                        <CFIF URL.lang EQ "en">
+                            <form class="contact-form" action="#viewbag.helper.getUrl('en', 'danieldecary', '', 'contact')#" method="POST">
+                        <CFELSE>
+                            <form class="contact-form" action="#viewbag.helper.getUrlFr('fr', 'danieldecary', '', 'contact')#" method="POST">
+                        </CFIF>
                             <div class="contact-form-success alert alert-success d-none mt-4">
                                 <CFIF URL.lang EQ "en">
                                     <strong>Success!</strong> Your message has been sent to us.
