@@ -1,5 +1,6 @@
 	
 	<cfmail to="#APPLICATION.emailInfo#"  from="#form.email_contact#" cc="#APPLICATION.emailDeveloper#" subject="Daniel Decary - Message" type="HTML" >
+	<!--- <cfmail to="francois@icreations.ca"  from="#form.email_contact#" cc="#APPLICATION.emailDeveloper#" subject="Daniel Decary - Message" type="HTML" > --->
 		<!doctype html>
 		<html>
 		  <head>
