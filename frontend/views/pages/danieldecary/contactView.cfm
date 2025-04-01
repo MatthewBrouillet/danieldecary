@@ -99,7 +99,7 @@
                                         <span class="mail-error-message text-1 d-block"></span>
                                     </div>
                                 </cfif>
-
+                            </CFIF> 
                             <div class="row">
                                 <div class="form-group col-lg-6">
                                     <label class="form-label mb-1 text-2"><CFIF URL.lang EQ "en">Name<CFELSE>Nom</CFIF></label>
