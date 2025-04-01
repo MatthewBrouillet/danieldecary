@@ -72,6 +72,27 @@
                 <div class="row py-4">
                     <div class="col-lg-12">
 
+                        <CFIF StructKeyExists(Form,'send_message')>
+                            <cfif confirmation EQ "yes">
+                                <div class="alert alert-success">
+                                    <CFIF URL.lang EQ "en">
+                                        <strong>Success!</strong> Your message has been sent to us.
+                                    <CFELSE>
+                                        <strong>Succès!</strong> Votre message a bien été envoyé.
+                                    </CFIF>
+                                </div>
+                            <cfelse>
+                                <div class="alert alert-danger">
+									<CFIF URL.lang EQ "en">
+                                        <strong>Error!</strong> There was an error sending your message.
+                                    <CFELSE>
+                                        <strong>Erreur!</strong> Il y a eu une erreur lors de l'envoi de votre message.
+                                    </CFIF>
+                                </div>
+                                
+                            </cfif>
+                        </CFIF>
+
                         <h2 class="font-weight-bold text-8 mt-2 mb-0"><CFIF URL.lang EQ "en">Contact Us<CFELSE>Contactez-nous</CFIF></h2>
                         <p class="mb-4"><CFIF URL.lang EQ "en">Feel free to ask for details, don't save any questions!<CFELSE></CFIF></p>
 
@@ -80,26 +101,7 @@
                         <CFELSE>
                             <form class="contact-form" action="#viewbag.helper.getUrlFr('fr', 'danieldecary', '', 'contact')#" method="POST">
                         </CFIF>
-                            <CFIF StructKeyExists(Form,'send_message')>
-                                <cfif confirmation EQ "yes">
-                                    <div class="contact-form-success alert alert-success d-none mt-4">
-                                        <CFIF URL.lang EQ "en">
-                                            <strong>Success!</strong> Your message has been sent to us.
-                                        <CFELSE>
-                                            <strong>Succès!</strong> Votre message a bien été envoyé.
-                                        </CFIF>
-                                    </div>
-                                <cfelse>
-                                    <div class="contact-form-error alert alert-danger d-none mt-4">
-                                        <CFIF URL.lang EQ "en">
-                                            <strong>Error!</strong> There was an error sending your message.
-                                        <CFELSE>
-                                            <strong>Erreur!</strong> Il y a eu une erreur lors de l'envoi de votre message.
-                                        </CFIF>
-                                        <span class="mail-error-message text-1 d-block"></span>
-                                    </div>
-                                </cfif>
-                            </CFIF> 
+                             
                             <div class="row">
                                 <div class="form-group col-lg-6">
                                     <label class="form-label mb-1 text-2"><CFIF URL.lang EQ "en">Name<CFELSE>Nom</CFIF></label>
