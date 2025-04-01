@@ -293,7 +293,11 @@
 						  <table border="0" cellpadding="0" cellspacing="0">
 							<tr>
 								<td>
-									<img src="<cfoutput>#request.Root#</cfoutput>/img/logos/logoDD_fr-dark.png" alt="Daniel Decary" ><BR><BR>
+									<CFIF URL.lang EQ "fr">
+										<img src="<cfoutput>#request.Root#</cfoutput>/img/logos/logoDD_fr-dark.png" alt="Daniel Decary" ><BR><BR>
+									<CFELSE>
+										<img src="<cfoutput>#request.Root#</cfoutput>/img/logos/logoDD_en-dark.png" alt="Daniel Decary" ><BR><BR>
+									</CFIF>
 								</td>
 							</tr>
 							<tr>

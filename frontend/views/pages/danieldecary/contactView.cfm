@@ -80,22 +80,25 @@
                         <CFELSE>
                             <form class="contact-form" action="#viewbag.helper.getUrlFr('fr', 'danieldecary', '', 'contact')#" method="POST">
                         </CFIF>
-                            <div class="contact-form-success alert alert-success d-none mt-4">
-                                <CFIF URL.lang EQ "en">
-                                    <strong>Success!</strong> Your message has been sent to us.
-                                <CFELSE>
-                                    <strong>Succès!</strong> Votre message a bien été envoyé.
-                                </CFIF>
-                            </div>
-
-                            <div class="contact-form-error alert alert-danger d-none mt-4">
-                                <CFIF URL.lang EQ "en">
-                                    <strong>Error!</strong> There was an error sending your message.
-                                <CFELSE>
-                                    <strong>Erreur!</strong> Il y a eu une erreur lors de l'envoi de votre message.
-                                </CFIF>
-                                <span class="mail-error-message text-1 d-block"></span>
-                            </div>
+                            <CFIF StructKeyExists(Form,'send_message')>
+                                <cfif confirmation = "yes">
+                                    <div class="contact-form-success alert alert-success d-none mt-4">
+                                        <CFIF URL.lang EQ "en">
+                                            <strong>Success!</strong> Your message has been sent to us.
+                                        <CFELSE>
+                                            <strong>Succès!</strong> Votre message a bien été envoyé.
+                                        </CFIF>
+                                    </div>
+                                <cfelse>
+                                    <div class="contact-form-error alert alert-danger d-none mt-4">
+                                        <CFIF URL.lang EQ "en">
+                                            <strong>Error!</strong> There was an error sending your message.
+                                        <CFELSE>
+                                            <strong>Erreur!</strong> Il y a eu une erreur lors de l'envoi de votre message.
+                                        </CFIF>
+                                        <span class="mail-error-message text-1 d-block"></span>
+                                    </div>
+                                </cfif>
 
                             <div class="row">
                                 <div class="form-group col-lg-6">
