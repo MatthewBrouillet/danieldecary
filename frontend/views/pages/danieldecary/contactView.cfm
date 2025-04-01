@@ -81,7 +81,7 @@
                             <form class="contact-form" action="#viewbag.helper.getUrlFr('fr', 'danieldecary', '', 'contact')#" method="POST">
                         </CFIF>
                             <CFIF StructKeyExists(Form,'send_message')>
-                                <cfif confirmation = "yes">
+                                <cfif confirmation EQ "yes">
                                     <div class="contact-form-success alert alert-success d-none mt-4">
                                         <CFIF URL.lang EQ "en">
                                             <strong>Success!</strong> Your message has been sent to us.
