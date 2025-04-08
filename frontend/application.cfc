@@ -83,7 +83,7 @@
 		</cfif> --->
 		
 		<!--- EMAIL TESTING MATT --->
-		<cfset APPLICATION.emailInfo	=	"ddecary@gmail.com">
+		<cfset APPLICATION.emailInfo	=	"ddecary@hotmail.com">
 		<cfset APPLICATION.emailDeveloper	=	"matthew@creationstouche.com">
 		<!--- <cfset APPLICATION.emailInfo	=		"info@ccdcanada.com">
 		<cfset APPLICATION.emailDeveloper	=	"francois@creationstouche.com"> --->
