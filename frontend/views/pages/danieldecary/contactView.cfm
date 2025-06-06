@@ -93,10 +93,12 @@
                             </cfif>
                         </CFIF>
 
-                        <h2 class="font-weight-bold text-8 mt-2 mb-0"><CFIF URL.lang EQ "en">Contact Us<CFELSE>Contactez-nous</CFIF></h2>
-                        <p class="mb-4"><CFIF URL.lang EQ "en">Feel free to ask for details, don't save any questions!<CFELSE></CFIF></p>
+                        <h2 class="font-weight-bold text-8 mt-2 mb-4"><CFIF URL.lang EQ "en">Contact Us<CFELSE>Contactez-nous</CFIF></h2>
+                        <!--- <p class="mb-4"><CFIF URL.lang EQ "en">Feel free to ask for details, don't save any questions!<CFELSE></CFIF></p> --->
 
-                        <CFIF URL.lang EQ "en">
+                        <a href="mailto:ddecary@hotmail.com" class="btn btn-modern btn-primary">ddecary@hotmail.com</a>
+                        
+                        <!--- <CFIF URL.lang EQ "en">
                             <form class="contact-form" action="#viewbag.helper.getUrl('en', 'danieldecary', '', 'contact')#" method="POST">
                         <CFELSE>
                             <form class="contact-form" action="#viewbag.helper.getUrlFr('fr', 'danieldecary', '', 'contact')#" method="POST">
@@ -130,7 +132,7 @@
                                     <input type="submit" value="Send Message" id="send_message" name="send_message" class="btn btn-primary btn-modern" data-loading-text="Loading...">
                                 </div>
                             </div>
-                        </form>
+                        </form> --->
 
                     </div>
 
