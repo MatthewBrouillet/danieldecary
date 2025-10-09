@@ -17,7 +17,7 @@
 							<li class="dropdown">
 								<a class="dropdown-item dropdown-toggle <CFIF URL.module EQ "services">active</CFIF>" href="#viewbag.helper.getUrlFr('fr', 'services', '', 'counselling')#">Services</a>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#viewbag.helper.getUrlFr('fr', 'services', '', 'counselling')#">Counselling / Web Thérapie</a></li>
+									<!--- <li><a class="dropdown-item" href="#viewbag.helper.getUrlFr('fr', 'services', '', 'counselling')#">Counselling / Web Thérapie</a></li> --->
 									<li><a class="dropdown-item" href="#viewbag.helper.getUrlFr('fr', 'services', '', 'conferences')#">Conférences / Retraites</a></li>
 									<li><a class="dropdown-item" href="#viewbag.helper.getUrlFr('fr', 'services', '', 'training')#">Formation en relation d'aide</a></li>
 									<li><a class="dropdown-item" href="#viewbag.helper.getUrlFr('fr', 'services', '', 'birkman')#">Méthode Birkman</a></li>
@@ -63,7 +63,7 @@
 							<li class="dropdown">
 								<a class="dropdown-item dropdown-toggle <CFIF URL.module EQ "services">active</CFIF>" href="#viewbag.helper.getUrl('en', 'services', '', 'counselling')#">Services</a>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#viewbag.helper.getUrl('en', 'services', '', 'counselling')#">Counselling / Web Therapy</a></li>
+									<!--- <li><a class="dropdown-item" href="#viewbag.helper.getUrl('en', 'services', '', 'counselling')#">Counselling / Web Therapy</a></li> --->
 									<li><a class="dropdown-item" href="#viewbag.helper.getUrl('en', 'services', '', 'conferences')#">Conferences / Retreats</a></li>
 									<li><a class="dropdown-item" href="#viewbag.helper.getUrl('en', 'services', '', 'training')#">Counselling Training</a></li>
 									<li><a class="dropdown-item" href="#viewbag.helper.getUrl('en', 'services', '', 'birkman')#">Birkman Method</a></li>
