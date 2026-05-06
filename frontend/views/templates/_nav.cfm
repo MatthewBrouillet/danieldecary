@@ -15,7 +15,7 @@
 								<a class="dropdown-item dropdown-toggle <CFIF URL.action EQ "services">active</CFIF>" href="#viewbag.helper.getUrlFr('fr', 'danieldecary', '', 'services')#">Services</a>
 							</li> --->
 							<li class="dropdown">
-								<a class="dropdown-item dropdown-toggle <CFIF URL.module EQ "services">active</CFIF>" href="#viewbag.helper.getUrlFr('fr', 'services', '', 'counselling')#">Services</a>
+								<a class="dropdown-item dropdown-toggle <CFIF URL.module EQ "services">active</CFIF>" href="#viewbag.helper.getUrlFr('fr', 'services', '', 'conferences')#">Services</a>
 								<ul class="dropdown-menu">
 									<!--- <li><a class="dropdown-item" href="#viewbag.helper.getUrlFr('fr', 'services', '', 'counselling')#">Counselling / Web Thérapie</a></li> --->
 									<li><a class="dropdown-item" href="#viewbag.helper.getUrlFr('fr', 'services', '', 'conferences')#">Conférences / Retraites</a></li>
