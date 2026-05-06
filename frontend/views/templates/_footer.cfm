@@ -9,7 +9,7 @@
 							<img src="#request.root#/img/logos/logoDD_fr-dark.png">
 						</CFIF>
 
-						<p class="text-5 mb-1 pt-2"><a href="tel:5142658115" class="text-decoration-none">(514) 265-8115</a></p>
+						<!--- <p class="text-5 mb-1 pt-2"><a href="tel:5142658115" class="text-decoration-none">(514) 265-8115</a></p> --->
 						<p class="text-5 mb-0"><a href="mailto:info@porto.com">ddecary@gmail.com</a></p>
 					</div>
 					<div class="col-md-5 col-lg-5 mb-5 mb-lg-0">

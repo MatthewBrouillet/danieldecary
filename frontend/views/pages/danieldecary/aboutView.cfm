@@ -243,7 +243,7 @@
 
     <div class="container py-2">
         <div class="row pt-5">
-            <div class="col-lg-6">
+            <!--- <div class="col-lg-6">
                 <div class="card border-radius-2 bg-color-light box-shadow-1 mb-4">
                     <div class="card-body p-relative zindex-1">
 
@@ -258,8 +258,8 @@
 
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
+            </div> --->
+            <div class="col-lg-12">
                 <div class="card border-radius-2 bg-color-light box-shadow-1 mb-4">
                     <div class="card-body p-relative zindex-1">
 

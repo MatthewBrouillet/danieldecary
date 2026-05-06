@@ -72,7 +72,7 @@
         <section class="section section-default bg-color-light-scale-1 mt-5 py-4 mb-5 px-3"<!---  style="background-color: ##dff1f7;" --->>
             <!--- <div class="container"> --->
                 <div class="row pt-4">
-                    <div class="col-lg-3 col-sm-12 pb-3">
+                    <!--- <div class="col-lg-3 col-sm-12 pb-3">
                         <div class="card border-radius-0 bg-color-light border-0 box-shadow-3">
                             <div class="card">
                                 <span class="thumb-info thumb-info-hide-wrapper-bg">
@@ -99,8 +99,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-12 pb-3">
+                    </div> --->
+                    <div class="col-lg-4 col-sm-12 pb-3">
                         <div class="card border-radius-0 bg-color-light border-0 box-shadow-3">
                             <div class="card">
                                 <span class="thumb-info thumb-info-hide-wrapper-bg">
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-12 pb-3">
+                    <div class="col-lg-4 col-sm-12 pb-3">
                         <div class="card border-radius-0 bg-color-light border-0 box-shadow-3">
                             <div class="card">
                                 <span class="thumb-info thumb-info-hide-wrapper-bg">
@@ -156,7 +156,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-12 pb-3">
+                    <div class="col-lg-4 col-sm-12 pb-3">
                         <div class="card border-radius-0 bg-color-light border-0 box-shadow-3">
                             <div class="card">
                                 <span class="thumb-info thumb-info-hide-wrapper-bg">
